@@ -21,6 +21,24 @@ const colors = [
   'purple',
 ];
 
+function displayColor(){
+colors.forEach( color =>{
+  const btn = document.createElement('div');
+  btn.classList.add('color');
+  document.getElementById('exo1').append(btn);
+  btn.textContent = color;
+  btn.style.backgroundColor = color ;
+  btn.addEventListener("click", function () {
+    document.body.style.backgroundColor = color ;
+  })
+});
+}
+
+
+
+
+
+
 // -------------------------------
 
 /* Exercice 2: Taille
@@ -29,6 +47,20 @@ const colors = [
     - Lui ajouter un listener au mousemove, qui change sa largeur
     en fonction de la position en Y de la souris à l'écran (event.clientY)
 */
+
+ const section2 = document.createElement('section');
+ section2.id = 'exo2';
+ document.body.append(section2);
+
+ const carre = document.createElement('div2');
+ carre.classList.add('square');
+ section2.append(carre);
+
+function square(){
+carre.addEventListener("mousemove", function (event){
+  carre.style.width = event.clientX +'px';
+})
+}
 
 // -------------------------------
 
@@ -41,7 +73,32 @@ const colors = [
     - Stocker dans le localstorage l'info du nb de points
     pour recharger la page avec le bon nombre de points dès le début
 */
+const section3 = document.createElement("section");
+section3.setAttribute('id', 'exo3');
+document.body.append(section3);
 
+const divNb = document.createElement('div');
+divNb.setAttribute('class', 'nb');
+const divDots = document.createElement('div');
+divDots.setAttribute('class', 'dots');
+
+
+section3.append(divNb, divDots);
+let time = 0;
+divNb.textContent = time;
+
+function displayPoint(){
+setInterval(() => {
+  time++;
+  divNb.textContent = time;
+
+  let divDot = document.createElement('div');
+  divDot.classList.add('dot');
+  divDots.append(divDot);
+
+  this.localStorage.setItem('time', time);
+}, 1000);
+}
 // -------------------------------
 
 /* Exercice 4: Contrôle au clavier
@@ -51,6 +108,19 @@ const colors = [
     - Exécuter chacun des 3 premiers exercices lorsque la page est vide en appuyant sur ENTER
     - Faire en sorte de d'arrêter le timer quand on appuie sur S, et de le relancer en réappuyant
 */
+
+
+document.addEventListener("keydown", (color123) => {
+  document.body.style.backgroundColor = colors[color123.key - 1];
+  if(color123.key === 'R'){
+    document.body.style.removeProperty('background-color');
+  } else if(color123.key === 'Enter'){
+    displayPoint();
+    displayColor();
+    square();
+  }
+  });
+
 
 // -------------------------------
 

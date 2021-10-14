@@ -6,8 +6,19 @@ console.log('--- Question 1 ---');
 /* créer une Promesse qui renvoie un nombre aléatoire au bout de 2 secondes.
   Si ce nombre est pair, le résoudre, sinon le rejeter.
 
+
   Utiliser setTimeout().
 */
+const random = new Promise(resolve, reject) (
+    setTimeout(() =>{
+    return Math.random();
+    }, 2000))
+
+random
+    .then(result) => {
+
+}).catch((err))
+
 
 console.log('--- Question 2 ---');
 /* Consommer la Promesse de 1) pour
