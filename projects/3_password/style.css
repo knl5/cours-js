@@ -20,6 +20,7 @@ body {
   border: 1px solid white;
   width: 400px;
   background-color: black;
+  border-radius: 10px;
 }
 
 h2 {
@@ -36,6 +37,10 @@ h2 {
     height: 100%;
     width: 100%;
   } */
+
+input[type='number']{
+  width: 45px;
+}
 
 .option {
   display: flex;
@@ -64,6 +69,7 @@ h2 {
   background-color: #5bc0be;
   color: #ffffff;
   border: none;
+  border-radius: 5px;
   cursor: pointer;
   outline: none;
 }
