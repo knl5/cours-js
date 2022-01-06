@@ -15,7 +15,10 @@ document.addEventListener(
 
     // [1] créer et ajouter un <button> "bouton" qui quand on clique dessus affiche 'click' dans la console.
     // Ne pas oublier de donner un textContent au bouton
-
+   /*  const btn = document.createElement("BUTTON");        
+    const text = document.createTextNode("Tweets");       
+    btn.appendChild(text);                               
+    document.body.appendChild(btn); */
     // [2] créer une fonction, qui pour un tweet en entrée, crée et retourne un <li> contenant le texte du tweet
 
     // [3] créer et ajouter un <ol> à la page, puis y ajouter les <li> de tweets en utilisant [2]

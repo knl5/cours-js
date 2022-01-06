@@ -9,15 +9,16 @@ console.log('--- Question 1 ---');
 
   Utiliser setTimeout().
 */
-const random = new Promise(resolve, reject) (
-    setTimeout(() =>{
-    return Math.random();
-    }, 2000))
-
-random
-    .then(result) => {
-
-}).catch((err))
+const p = new Promise ((resolve, reject) => {
+  setTimeout(() => {
+    const nb = Math.floor(Math.random() * 50);
+    if (nb % 2 === 0){
+      resolve(nb)
+    } else {
+      reject(nb);
+    }
+  }, 2000);
+});
 
 
 console.log('--- Question 2 ---');
@@ -26,12 +27,29 @@ console.log('--- Question 2 ---');
   - logguer un message d'erreur quand elle est rejetée
   - logguer 'Fin' quoi qu'il arrive
 */
+p.then(function(nombrePromis){
+  console.log(nombrePromis);
+}).catch(function(nombre){
+  console.error('Oups', nombre);
+}).finally(function(){
+  console.log('Fin');
+});
+
 
 console.log('--- Question 3 ---');
 /* Créer une promesse en utilisant fetch(), et la consommer pour afficher la donnée contenue dans l'url ci-dessous:
  */
-const url =
-  'https://raw.githubusercontent.com/iOiurson/data/master/data/tweets.json';
+const promise2 = fetch ('https://raw.githubusercontent.com/iOiurson/data/master/data/tweets.json');
+
+promise2
+.then((response)=> {
+  console.log("response", response);
+
+  return response.json();
+})
+.then((data) => {
+  console.log("data", data);
+});
 
 console.log('--- Question 4 ---');
 /* Écrire une fonction getJson() qui prend une URL en entrée,
