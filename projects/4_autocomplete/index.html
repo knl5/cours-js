@@ -10,25 +10,18 @@
       rel="stylesheet"
       href="https://necolas.github.io/normalize.css/latest/normalize.css"
     />
-    <link rel="stylesheet" href="../../styles/reset.css" />
+    
     <link rel="stylesheet" href="./style.css" />
 
     <script type="module" src="./index.js" defer></script>
+    
+    <script type="module" src="./fetchData.js" defer></script>
 
     <title>autocomplete</title>
   </head>
 
   <body>
-    <div class="search"> 
-    <h1>Rechercher adresse</h1>
+    <h1>Search an address</h1>
     
-      <input type="text" id="searchBar" aria-autocomplete="list" list="searchData" value="" placeholder=" Search an adress">
-      <datalist id="searchData">
-        <option value="">
-      </datalist>
-
-
-      <button id="btn" > Ajouter </button>
-    </div>
   </body>
 </html>
